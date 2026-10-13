@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c3d">
+  <title>HostelHub · Administration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark">H</span><span class="brand-name">hostel<span>hub</span></span></div>
+      <div class="campus-label">CAMPUS ADMINISTRATION</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span>Dashboard</button>
+        <div class="nav-section">PEOPLE & HOUSING</div>
+        <button class="nav-item" data-page="students"><span class="nav-icon">♙</span>Students</button>
+        <button class="nav-item" data-page="blocks"><span class="nav-icon">▤</span>Hostel blocks</button>
+        <button class="nav-item" data-page="rooms"><span class="nav-icon">▦</span>Rooms</button>
+        <button class="nav-item" data-page="beds"><span class="nav-icon">▱</span>Beds</button>
+        <button class="nav-item" data-page="allocations"><span class="nav-icon">⇄</span>Allocations</button>
+        <button class="nav-item" data-page="transfers"><span class="nav-icon">↗</span>Transfers</button>
+        <div class="nav-section">STUDENT SERVICES</div>
+        <button class="nav-item" data-page="fees"><span class="nav-icon">₹</span>Fees & payments</button>
+        <button class="nav-item" data-page="visitors"><span class="nav-icon">♧</span>Visitors</button>
+        <button class="nav-item" data-page="complaints"><span class="nav-icon">☷</span>Complaints</button>
+        <button class="nav-item" data-page="maintenance"><span class="nav-icon">⚒</span>Maintenance</button>
+        <button class="nav-item" data-page="vacating"><span class="nav-icon">⇥</span>Vacating</button>
+        <div class="nav-section">INSIGHTS</div>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">▥</span>Reports</button>
+      </nav>
+      <div class="sidebar-footer"><div class="user-avatar">HA</div><div><strong>Hostel Administrator</strong><small>Campus operations</small></div><span class="more">···</span></div>
+    </aside>
+    <div class="mobile-scrim" id="mobileScrim"></div>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menuToggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Hostel administration</span><b>/</b><strong id="pageCrumb">Dashboard</strong></div>
+        <div class="topbar-right"><span class="api-status" id="apiStatus"><i></i>Checking connection</span><button class="icon-button" id="refreshButton" title="Refresh live data" aria-label="Refresh live data">↻</button><div class="top-avatar">HA</div></div>
+      </header>
+      <section class="page-content" id="pageContent" aria-live="polite"><div class="page-loading"><span class="spinner"></span>Loading your workspace…</div></section>
+    </main>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <div class="modal-root" id="modalRoot"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>
